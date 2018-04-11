@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app.routing';
 
 // Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
+import { config } from './config.service';
 
 @NgModule({
   imports: [
@@ -37,7 +38,7 @@ import { FullLayoutComponent } from './layouts/full-layout.component';
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  }],
+  }, config],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

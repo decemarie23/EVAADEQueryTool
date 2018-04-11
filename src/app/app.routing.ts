@@ -21,6 +21,14 @@ export const routes: Routes = [
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
       },
+      {
+        path: 'components',
+        loadChildren: './components/components.module#ComponentsModule'
+      },
+      {
+        path: 'pages',
+        loadChildren: './pages/pages.module#PagesModule',
+      }
     ]
   }
 ];

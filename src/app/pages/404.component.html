@@ -1,111 +1,25 @@
 <div class="animated fadeIn">
   <div class="row">
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-primary">
-        <div class="card-body pb-0">
-          <div class="btn-group float-right" dropdown>
-            <button type="button" class="btn btn-transparent dropdown-toggle p-0" dropdownToggle>
-              <i class="icon-settings"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+    <div class="col-md-12">
+        <div class="card text-white bg-primary">
+          <div class="card-body pb-0">
+            <div class="btn-group float-right" dropdown>
+              <button type="button" class="btn btn-transparent dropdown-toggle p-0" dropdownToggle>
+                <i class="icon-settings"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
             </div>
+            <h4 class="mb-0">Current DB  Connection</h4>
+            <p><strong>Server host</strong> : localhost
+            <br><strong>Database</strong> : EVAADE
+            <br><strong>User</strong> : root</p>
           </div>
-          <h4 class="mb-0">Current DB  Connection</h4>
-          <p>Localhost/Evaade</p>
-        </div>
-        <div class="chart-wrapper px-3" style="height:70px;">
-          <canvas baseChart class="chart"
-          [datasets]="lineChart1Data"
-          [labels]="lineChart1Labels"
-          [options]="lineChart1Options"
-          [colors]="lineChart1Colours"
-          [legend]="lineChart1Legend"
-          [chartType]="lineChart1Type"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
-        </div>
-      </div>
-    </div><!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-info">
-        <div class="card-body pb-0">
-          <button type="button" class="btn btn-transparent p-0 float-right">
-            <i class="icon-location-pin"></i>
-          </button>
-          <h4 class="mb-0">Number of Tables</h4>
-          <p>85 tables</p>
-        </div>
-        <div class="chart-wrapper px-3" style="height:70px;">
-          <canvas baseChart class="chart"
-          [datasets]="barChart1Data"
-          [labels]="barChart1Labels"
-          [options]="barChart1Options"
-          [colors]="barChart1Colours"
-          [legend]="barChart1Legend"
-          [chartType]="barChart1Type"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
-        </div>
-      </div>
-    </div><!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-warning">
-        <div class="card-body pb-0">
-          <div class="btn-group float-right" dropdown>
-            <button type="button" class="btn btn-transparent dropdown-toggle p-0" dropdownToggle>
-              <i class="icon-settings"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-          <h4 class="mb-0">Save Database Queries</h4>
-          <p>10 Queries</p>
-        </div>
-        <div class="chart-wrapper" style="height:70px;">
-          <canvas baseChart class="chart"
-          [datasets]="lineChart3Data"
-          [labels]="lineChart3Labels"
-          [options]="lineChart3Options"
-          [colors]="lineChart3Colours"
-          [legend]="lineChart3Legend"
-          [chartType]="lineChart3Type"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
-        </div>
-      </div>
-    </div><!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-danger">
-        <div class="card-body pb-0">
-          <div class="btn-group float-right" dropdown>
-            <button type="button" class="btn btn-transparent dropdown-toggle p-0" dropdownToggle>
-              <i class="icon-settings"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-          <h4 class="mb-0">Save DB Connection</h4>
-          <p>5 Available Connections</p>
-        </div>
-        <div class="chart-wrapper px-3" style="height:70px;">
-          <canvas baseChart class="chart"
-          [datasets]="barChart1Data"
-          [labels]="barChart1Labels"
-          [options]="barChart1Options"
-          [colors]="barChart1Colours"
-          [legend]="barChart1Legend"
-          [chartType]="barChart1Type"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
+          <div class="chart-wrapper px-3" style="height:30px;">
+          <canvas baseChart class="chart"></canvas>
         </div>
       </div>
     </div><!--/.col-->
@@ -114,20 +28,22 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          Save Queries
+          Database Connections
         </div>
         <div class="input-group">
           <span class="input-group-btn">
             <button type="button" class="btn btn-primary" [routerLink]="['/components/criteria']"><i class="fa fa-search"></i></button>
           </span>
-          <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="Search Save Queries">
+          <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="Search Database Connections">
         </div>
         <div class="card-body">
           <div class="table-responsive"></div>
           <table class="table table-responsive table-hover table-outline mb-0">
             <thead class="thead-default">
               <tr>
-                <th>File Name</th>
+                <th>ID</th>
+                <th>MSSQL Server (Host)</th>
+                <th>Database Name</th>
                 <th>Usage</th>
                 <th>Activity</th>
                 <th class="text-center"> Action</th>
@@ -135,8 +51,10 @@
             </thead>
             <tbody>
               <tr>
+                <td>001</td>
+                <td>localhost</td>
                 <td>
-                  <div>evaade_query.qry</div>
+                  <div>EVAADE</div>
                   <div class="small text-muted">
                     <span>New</span> | Created: Jan 1, 2015
                   </div>
@@ -155,18 +73,18 @@
                   </div>
                 </td>
                 <td>
-                  <div class="small text-muted">Last used</div>
-                  <strong>10 sec ago</strong>
+                  <div class="small text-muted">being used</div>
+                  <strong>Connected</strong>
                 </td>
                 <td class="text-center">
-                  <a href="#" ><i class="icon-paper-plane"></i></a>
-                  <a href="#" ><i class="icon-note"></i></a>
-                  <a href="#" ><i class="icon-trash"></i></a>
+                  <a href="#" ><i class="fa fa-circle-o-notch"></i></a>
                 </td>
               </tr>
               <tr>
+                <td>001</td>
+                <td>localhost</td>
                 <td>
-                  <div>evaade_query_search.qry</div>
+                  <div>EVAADE V2</div>
                   <div class="small text-muted">
                     <span>New</span> | Created: Jan 1, 2015
                   </div>
@@ -189,14 +107,15 @@
                   <strong>3 days ago</strong>
                 </td>
                 <td class="text-center">
-                  <a href="#" ><i class="icon-paper-plane"></i></a>
-                  <a href="#" ><i class="icon-note"></i></a>
+                  <a href="#" ><i class="fa fa-plug"></i></a>
                   <a href="#" ><i class="icon-trash"></i></a>
                 </td>
               </tr>
               <tr>
+                <td>001</td>
+                <td>localhost</td>
                 <td>
-                  <div>evaade_query_agent.qry</div>
+                  <div>MINERALPRO</div>
                   <div class="small text-muted">
                     <span>New</span> | Created: Jan 1, 2015
                   </div>
@@ -219,14 +138,15 @@
                   <strong>5 days ago</strong>
                 </td>
                 <td class="text-center">
-                  <a href="#" ><i class="icon-paper-plane"></i></a>
-                  <a href="#" ><i class="icon-note"></i></a>
+                  <a href="#" ><i class="fa fa-plug"></i></a>
                   <a href="#" ><i class="icon-trash"></i></a>
                 </td>
               </tr>
               <tr>
+                <td>001</td>
+                <td>localhost</td>
                 <td>
-                  <div>evaade_query_result_2017.qry</div>
+                  <div>PAYROLLCF</div>
                   <div class="small text-muted">
                     <span>New</span> | Created: Jan 2, 2015
                   </div>
@@ -249,14 +169,15 @@
                   <strong>10 sec ago</strong>
                 </td>
                 <td class="text-center">
-                  <a href="#" ><i class="icon-paper-plane"></i></a>
-                  <a href="#" ><i class="icon-note"></i></a>
+                  <a href="#" ><i class="fa fa-plug"></i></a>
                   <a href="#" ><i class="icon-trash"></i></a>
                 </td>
               </tr>
               <tr>
+                <td>001</td>
+                <td>localhost</td>
                 <td>
-                  <div>evaade_query_test_result.qry</div>
+                  <div>ARMS</div>
                   <div class="small text-muted">
                     <span>New</span> | Created: Jan 1, 2015
                   </div>
@@ -279,8 +200,7 @@
                   <strong>10 sec ago</strong>
                 </td>
                 <td class="text-center">
-                  <a href="#" ><i class="icon-paper-plane"></i></a>
-                  <a href="#" ><i class="icon-note"></i></a>
+                  <a href="#" ><i class="fa fa-plug"></i></a>
                   <a href="#" ><i class="icon-trash"></i></a>
                 </td>
               </tr>
