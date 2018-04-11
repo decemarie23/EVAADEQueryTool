@@ -1,0 +1,187 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="form-group row">
+          <div class="col-md-12">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn-header btn-primary" [routerLink]="['/components/criteria']" (click)="updateField()"><i class="fa fa-search"></i></button>
+              </span>
+              <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="{{sampleText}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Field Name</th>
+              <th style='width:70px'>Display</th>
+              <th>Data Filter</th>
+              <th style='width:90px'>Use Type</th>
+              <th>Display Name</th>
+              <th style='width:50px'>Format</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let field of tableFieldname">
+            <tr>
+              <td>{{field.name}}</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td>Categorical</td>
+              <td>Agent Name</td>
+              <td>{{sampleText}}</td>
+            </tr>
+            <!-- <tr>
+              <td>Agent.idAgent</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td></td>
+              <td>Agent ID</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Agent.appraisalYear</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td>Ordinal</td>
+              <td>Appraisal Year</td>
+              <td>0000</td>
+            </tr>
+            <tr>
+              <td>Agent.updateDt</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td>Time, Cat., Ord.</td>
+              <td>Update Date</td>
+              <td>yyyy/mm/dd</td>
+            </tr>
+            <tr>
+              <td>Agent.deleteFlag</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td>D</td>
+              <td></td>
+              <td>Row Delete</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Unit.name</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td></td>
+              <td>Unit Name</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Unit.idUnit</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td></td>
+              <td>Unit ID</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Unit.appraisalYear</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td></td>
+              <td>Appraisal Year</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Unit.updateDt</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td></td>
+              <td>Update Date</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Unit.deleteFlag</td>
+              <td>
+                <label class="switch switch-text switch-sm switch-pill switch-success">
+                  <input type="checkbox" class="switch-input" unchecked>
+                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                  <span class="switch-handle"></span>
+                </label>
+              </td>
+              <td></td>
+              <td></td>
+              <td>Row Delete</td>
+              <td></td>
+            </tr> -->
+          </tbody>
+        </table>
+        <nav>
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+</div>
